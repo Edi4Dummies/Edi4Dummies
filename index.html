@@ -76,17 +76,66 @@
         </section>
 
         <!-- Automotive OEM & Tier 1 Supplier EDI Requirements -->
-        <section id="customers" class="content-section">
-            <h2>OEM & Tier 1 Supplier EDI Requirements</h2>
-            <ul>
-                <li><strong>Ford:</strong> Requires AS2 connectivity, strict ASN validation, and specific label formats.</li>
-                <li><strong>GM:</strong> Uses GENTRAN for EDI processing; suppliers must send 997s for every transaction.</li>
-                <li><strong>Toyota:</strong> Has a Just-In-Time (JIT) model requiring accurate 830 and 862 transactions.</li>
-                <li><strong>Honda:</strong> Expects ASNs to match invoices exactly or risk rejection.</li>
-                <li><strong>Chrysler (Stellantis):</strong> Uses IBM Sterling and mandates time-sensitive ASN accuracy.</li>
-                <li><strong>Volkswagen:</strong> Requires OFTP2 protocol for European suppliers.</li>
-            </ul>
-        </section>
+<section id="customers" class="content-section">
+    <h2>OEM & Tier 1 Supplier EDI Requirements</h2>
+    <p>Each major automotive manufacturer has specific EDI compliance mandates that suppliers must meet to avoid chargebacks and disruptions. Below is a breakdown of the most critical requirements per OEM.</p>
+
+    <h3>Ford Motor Company</h3>
+    <ul>
+        <li><strong>Connectivity:</strong> AS2 required for direct connections; VANs accepted for legacy integrations.</li>
+        <li><strong>EDI Sent by Ford:</strong> 830 (Planning Schedule), 850 (Purchase Order), 856 (ASN), 810 (Invoice), 997 (Acknowledgment).</li>
+        <li><strong>EDI Expected from Suppliers:</strong> 856 (ASN – must match shipment exactly), 810 (Invoice – must match PO & ASN), 997 (FA for all inbound docs).</li>
+        <li><strong>ASN Compliance:</strong> ASN must be transmitted before shipment arrival. Ford has **strict** validation on quantity, serial numbers, and packaging labels.</li>
+        <li><strong>Labeling Requirements:</strong> Ford mandates compliance with **Odette and AIAG label standards.** Incorrect labels = chargebacks.</li>
+    </ul>
+
+    <h3>General Motors (GM)</h3>
+    <ul>
+        <li><strong>Connectivity:</strong> Uses GENTRAN for internal processing. AS2 required for new suppliers, VANs allowed for legacy partners.</li>
+        <li><strong>EDI Sent by GM:</strong> 830 (Forecast), 850 (PO), 862 (Shipping Schedule), 856 (ASN), 810 (Invoice), 997 (Acknowledgment).</li>
+        <li><strong>EDI Expected from Suppliers:</strong> 856 (ASN – ASN must be 100% accurate), 810 (Invoice), 997 (FA must be sent for all transactions).</li>
+        <li><strong>ASN Compliance:</strong> Late or incorrect ASNs lead to **penalties and delivery disruptions.** Serial numbers and container ID validation required.</li>
+        <li><strong>Invoice Matching:</strong> PO, Invoice, and ASN must match exactly, including currency, taxes, and part numbers.</li>
+    </ul>
+
+    <h3>Toyota</h3>
+    <ul>
+        <li><strong>Connectivity:</strong> Uses AS2 for EDI, VANs only for Tier 1 suppliers.</li>
+        <li><strong>EDI Sent by Toyota:</strong> 830 (Forecast), 850 (PO), 862 (Daily Shipping Schedule), 856 (ASN), 810 (Invoice), 997 (FA).</li>
+        <li><strong>EDI Expected from Suppliers:</strong> 856 (ASN with detailed packing info), 810 (Invoice), 997 (FA).</li>
+        <li><strong>Just-In-Time (JIT) Model:</strong> Toyota **relies heavily on 830 & 862 transactions** for precise production schedules.</li>
+        <li><strong>ASN Validation:</strong> Packaging, serial numbers, and **dock codes** must be included in the ASN.</li>
+        <li><strong>Labeling Requirements:</strong> Must follow **Toyota Odette/AIAG standards** for barcode labeling.</li>
+    </ul>
+
+    <h3>Honda</h3>
+    <ul>
+        <li><strong>Connectivity:</strong> AS2 required; VAN only allowed for older suppliers.</li>
+        <li><strong>EDI Sent by Honda:</strong> 830 (Forecast), 850 (PO), 862 (Shipping Instructions), 856 (ASN), 810 (Invoice), 997 (FA).</li>
+        <li><strong>EDI Expected from Suppliers:</strong> 856 (ASN must match invoice exactly), 810 (Invoice), 997 (FA).</li>
+        <li><strong>ASN Compliance:</strong> Honda has **zero-tolerance for ASN errors.** Mismatches with invoices = **auto rejection.**</li>
+        <li><strong>Labeling & Barcode Standards:</strong> Honda requires **Honda-approved label formats** with serialized barcodes.</li>
+    </ul>
+
+    <h3>Stellantis (Chrysler, Dodge, Jeep, RAM, Fiat)</h3>
+    <ul>
+        <li><strong>Connectivity:</strong> Uses IBM Sterling for AS2 connections; VAN support available.</li>
+        <li><strong>EDI Sent by Stellantis:</strong> 830 (Forecast), 850 (PO), 862 (Shipping Schedule), 856 (ASN), 810 (Invoice), 997 (FA).</li>
+        <li><strong>EDI Expected from Suppliers:</strong> 856 (ASN – time-sensitive validation), 810 (Invoice), 997 (FA).</li>
+        <li><strong>ASN Timing:</strong> ASNs must be **transmitted within minutes of shipment pickup.** Delays = **chargebacks.**</li>
+        <li><strong>Labeling Requirements:</strong> Stellantis follows **AIAG labeling standards with Stellantis-specific barcode rules.**</li>
+    </ul>
+
+    <h3>Volkswagen</h3>
+    <ul>
+        <li><strong>Connectivity:</strong> Requires **OFTP2** for European suppliers; AS2 for North American suppliers.</li>
+        <li><strong>EDI Sent by Volkswagen:</strong> 830 (Forecast), 850 (PO), 862 (Shipping Instructions), 856 (ASN), 810 (Invoice), 997 (FA).</li>
+        <li><strong>EDI Expected from Suppliers:</strong> 856 (ASN must match invoice), 810 (Invoice), 997 (FA).</li>
+        <li><strong>ASN Accuracy:</strong> Volkswagen **rejects late or incorrect ASNs automatically.**</li>
+        <li><strong>Labeling Standards:</strong> **Volkswagen uses VDA labeling standards** for European facilities.</li>
+    </ul>
+</section>
+
 
         <!-- Contact -->
         <section id="contact" class="content-section">
