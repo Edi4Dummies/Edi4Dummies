@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Comprehensive guide to EDI for the automotive industry. Covers transaction types, VANs, common errors, fixes, troubleshooting, and customer requirements.">
+    <title>EDI4Dummies - Automotive EDI Guide</title>
+    <link rel="stylesheet" href="assets/css/global.css">
+    <link rel="icon" type="image/png" href="public/images/favicon/favicon.ico">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="public/images/logo/logo.png" alt="EDI4Dummies Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#overview">EDI Overview</a></li>
+                <li><a href="#types">EDI Transaction Types</a></li>
+                <li><a href="#errors">Common Errors & Fixes</a></li>
+                <li><a href="#vans">VAN & Connectivity</a></li>
+                <li><a href="#customers">OEM & Tier 1 Requirements</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Automotive EDI Mastery</h1>
+            <p>Your ultimate resource for Electronic Data Interchange (EDI) in the automotive supplier industry.</p>
+            <a href="mailto:contactus@edi4dummies.com" class="cta-button">Get Expert Help</a>
+        </section>
+
+        <!-- EDI Overview -->
+        <section id="overview" class="content-section">
+            <h2>Understanding EDI in the Automotive Industry</h2>
+            <p>Electronic Data Interchange (EDI) is the backbone of supply chain communication in the automotive industry. EDI enables Tier 1 and Tier 2 suppliers to communicate with Original Equipment Manufacturers (OEMs) and logistics providers efficiently.</p>
+            <p>Most major automotive brands **mandate** EDI compliance for their suppliers, ensuring seamless document exchanges such as Purchase Orders, ASNs, and Invoices.</p>
+        </section>
+
+        <!-- EDI Transaction Types -->
+        <section id="types" class="content-section">
+            <h2>Common EDI Transaction Types in Automotive</h2>
+            <ul>
+                <li><strong>EDI 850 - Purchase Order (PO)</strong>: Sent by OEMs or Tier 1 suppliers to request goods.</li>
+                <li><strong>EDI 855 - Purchase Order Acknowledgment</strong>: Confirms acceptance or rejection of a PO.</li>
+                <li><strong>EDI 856 - Advance Ship Notice (ASN)</strong>: Critical for just-in-time (JIT) manufacturing.</li>
+                <li><strong>EDI 810 - Invoice</strong>: Used for billing and payment tracking.</li>
+                <li><strong>EDI 820 - Payment Order/Remittance Advice</strong>: Confirms payment details.</li>
+                <li><strong>EDI 830 - Planning Schedule</strong>: Forecasts future demand.</li>
+                <li><strong>EDI 862 - Shipping Schedule</strong>: Provides daily shipment instructions.</li>
+                <li><strong>EDI 997 - Functional Acknowledgment</strong>: Confirms receipt of any EDI document.</li>
+            </ul>
+        </section>
+
+        <!-- Common Errors & Fixes -->
+        <section id="errors" class="content-section">
+            <h2>Common EDI Errors and How to Fix Them</h2>
+            <ul>
+                <li><strong>Missing or Invalid ASN (EDI 856):</strong> Can lead to supplier chargebacks. Ensure ASN is sent before shipment arrives.</li>
+                <li><strong>Invoice (EDI 810) Rejections:</strong> Often due to mismatched PO numbers or missing terms.</li>
+                <li><strong>Duplicate Transactions:</strong> Check your VAN logs to confirm a document wasn't already processed.</li>
+                <li><strong>997 Functional Acknowledgment Errors:</strong> Indicates a formatting issue. Validate against the OEM’s EDI specifications.</li>
+            </ul>
+        </section>
+
+        <!-- VAN & Connectivity -->
+        <section id="vans" class="content-section">
+            <h2>VANs and Connectivity: How Automotive EDI is Transmitted</h2>
+            <ul>
+                <li><strong>Major VAN Providers:</strong> IBM Sterling, OpenText, SPS Commerce.</li>
+                <li><strong>AS2 Communication:</strong> Required by many OEMs, including Ford and GM.</li>
+                <li><strong>Direct EDI via APIs:</strong> Increasingly used by modern automotive OEMs.</li>
+            </ul>
+        </section>
+
+        <!-- Automotive OEM & Tier 1 Supplier EDI Requirements -->
+        <section id="customers" class="content-section">
+            <h2>OEM & Tier 1 Supplier EDI Requirements</h2>
+            <ul>
+                <li><strong>Ford:</strong> Requires AS2 connectivity, strict ASN validation, and specific label formats.</li>
+                <li><strong>GM:</strong> Uses GENTRAN for EDI processing; suppliers must send 997s for every transaction.</li>
+                <li><strong>Toyota:</strong> Has a Just-In-Time (JIT) model requiring accurate 830 and 862 transactions.</li>
+                <li><strong>Honda:</strong> Expects ASNs to match invoices exactly or risk rejection.</li>
+                <li><strong>Chrysler (Stellantis):</strong> Uses IBM Sterling and mandates time-sensitive ASN accuracy.</li>
+                <li><strong>Volkswagen:</strong> Requires OFTP2 protocol for European suppliers.</li>
+            </ul>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="content-section">
+            <h2>Get Expert Help with Automotive EDI</h2>
+            <p>Need help with EDI compliance, troubleshooting errors, or VAN connectivity? Contact us today.</p>
+            <a href="mailto:contactus@edi4dummies.com" class="cta-button">Contact Us</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 EDI4Dummies. All rights reserved.</p>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
