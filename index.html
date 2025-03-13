@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Comprehensive guide to EDI for the automotive industry. Covers transaction types, VANs, common errors, fixes, troubleshooting, and customer requirements.">
-    <title>EDI4Dummies - Automotive EDI Guide</title>
+    <meta name="description" content="The Ultimate Automotive EDI Resource">
+    <title>EDI4Dummies - Home</title>
     <link rel="stylesheet" href="assets/css/global.css">
     <link rel="icon" type="image/png" href="public/images/favicon/favicon.ico">
 </head>
@@ -15,140 +15,46 @@
         </div>
         <nav>
             <ul>
-                <li><a href="#overview">EDI Overview</a></li>
-                <li><a href="#types">EDI Transaction Types</a></li>
-                <li><a href="#errors">Common Errors & Fixes</a></li>
-                <li><a href="#vans">VAN & Connectivity</a></li>
-                <li><a href="#customers">OEM & Tier 1 Requirements</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="login.html" class="nav-button">Log In</a></li>
+                <li><a href="signup.html" class="cta-button">Get Started</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
         <section class="hero">
-            <h1>Automotive EDI Mastery</h1>
-            <p>Your ultimate resource for Electronic Data Interchange (EDI) in the automotive supplier industry.</p>
-            <a href="mailto:contactus@edi4dummies.com" class="cta-button">Get Expert Help</a>
+            <h1>Master Automotive EDI</h1>
+            <p>Your go-to resource for Electronic Data Interchange (EDI) in the automotive industry.</p>
         </section>
 
-        <!-- EDI Overview -->
-        <section id="overview" class="content-section">
-            <h2>Understanding EDI in the Automotive Industry</h2>
-            <p>Electronic Data Interchange (EDI) is the backbone of supply chain communication in the automotive industry. EDI enables Tier 1 and Tier 2 suppliers to communicate with Original Equipment Manufacturers (OEMs) and logistics providers efficiently.</p>
-            <p>Most major automotive brands **mandate** EDI compliance for their suppliers, ensuring seamless document exchanges such as Purchase Orders, ASNs, and Invoices.</p>
-        </section>
+        <section class="content-grid">
+            <div class="info-card">
+                <h2>What is Automotive EDI?</h2>
+                <p>EDI (Electronic Data Interchange) is the digital communication standard used by automotive manufacturers and suppliers.</p>
+                <ul>
+                    <li>📦 **Manage Purchase Orders, ASNs, and Invoices**</li>
+                    <li>🚗 **OEM & Tier 1 Supplier EDI Requirements**</li>
+                    <li>⚡ **Real-time Compliance & Error Fixes**</li>
+                </ul>
+            </div>
 
-        <!-- EDI Transaction Types -->
-        <section id="types" class="content-section">
-            <h2>Common EDI Transaction Types in Automotive</h2>
-            <ul>
-                <li><strong>EDI 850 - Purchase Order (PO)</strong>: Sent by OEMs or Tier 1 suppliers to request goods.</li>
-                <li><strong>EDI 855 - Purchase Order Acknowledgment</strong>: Confirms acceptance or rejection of a PO.</li>
-                <li><strong>EDI 856 - Advance Ship Notice (ASN)</strong>: Critical for just-in-time (JIT) manufacturing.</li>
-                <li><strong>EDI 810 - Invoice</strong>: Used for billing and payment tracking.</li>
-                <li><strong>EDI 820 - Payment Order/Remittance Advice</strong>: Confirms payment details.</li>
-                <li><strong>EDI 830 - Planning Schedule</strong>: Forecasts future demand.</li>
-                <li><strong>EDI 862 - Shipping Schedule</strong>: Provides daily shipment instructions.</li>
-                <li><strong>EDI 997 - Functional Acknowledgment</strong>: Confirms receipt of any EDI document.</li>
-            </ul>
-        </section>
-
-        <!-- Common Errors & Fixes -->
-        <section id="errors" class="content-section">
-            <h2>Common EDI Errors and How to Fix Them</h2>
-            <ul>
-                <li><strong>Missing or Invalid ASN (EDI 856):</strong> Can lead to supplier chargebacks. Ensure ASN is sent before shipment arrives.</li>
-                <li><strong>Invoice (EDI 810) Rejections:</strong> Often due to mismatched PO numbers or missing terms.</li>
-                <li><strong>Duplicate Transactions:</strong> Check your VAN logs to confirm a document wasn't already processed.</li>
-                <li><strong>997 Functional Acknowledgment Errors:</strong> Indicates a formatting issue. Validate against the OEM’s EDI specifications.</li>
-            </ul>
-        </section>
-
-        <!-- VAN & Connectivity -->
-        <section id="vans" class="content-section">
-            <h2>VANs and Connectivity: How Automotive EDI is Transmitted</h2>
-            <ul>
-                <li><strong>Major VAN Providers:</strong> IBM Sterling, OpenText, SPS Commerce.</li>
-                <li><strong>AS2 Communication:</strong> Required by many OEMs, including Ford and GM.</li>
-                <li><strong>Direct EDI via APIs:</strong> Increasingly used by modern automotive OEMs.</li>
-            </ul>
-        </section>
-
-        <!-- Automotive OEM & Tier 1 Supplier EDI Requirements -->
-<section id="customers" class="content-section">
-    <h2>OEM & Tier 1 Supplier EDI Requirements</h2>
-    <p>Each major automotive manufacturer has specific EDI compliance mandates that suppliers must meet to avoid chargebacks and disruptions. Below is a breakdown of the most critical requirements per OEM.</p>
-
-    <h3>Ford Motor Company</h3>
-    <ul>
-        <li><strong>Connectivity:</strong> AS2 required for direct connections; VANs accepted for legacy integrations.</li>
-        <li><strong>EDI Sent by Ford:</strong> 830 (Planning Schedule), 850 (Purchase Order), 856 (ASN), 810 (Invoice), 997 (Acknowledgment).</li>
-        <li><strong>EDI Expected from Suppliers:</strong> 856 (ASN – must match shipment exactly), 810 (Invoice – must match PO & ASN), 997 (FA for all inbound docs).</li>
-        <li><strong>ASN Compliance:</strong> ASN must be transmitted before shipment arrival. Ford has **strict** validation on quantity, serial numbers, and packaging labels.</li>
-        <li><strong>Labeling Requirements:</strong> Ford mandates compliance with **Odette and AIAG label standards.** Incorrect labels = chargebacks.</li>
-    </ul>
-
-    <h3>General Motors (GM)</h3>
-    <ul>
-        <li><strong>Connectivity:</strong> Uses GENTRAN for internal processing. AS2 required for new suppliers, VANs allowed for legacy partners.</li>
-        <li><strong>EDI Sent by GM:</strong> 830 (Forecast), 850 (PO), 862 (Shipping Schedule), 856 (ASN), 810 (Invoice), 997 (Acknowledgment).</li>
-        <li><strong>EDI Expected from Suppliers:</strong> 856 (ASN – ASN must be 100% accurate), 810 (Invoice), 997 (FA must be sent for all transactions).</li>
-        <li><strong>ASN Compliance:</strong> Late or incorrect ASNs lead to **penalties and delivery disruptions.** Serial numbers and container ID validation required.</li>
-        <li><strong>Invoice Matching:</strong> PO, Invoice, and ASN must match exactly, including currency, taxes, and part numbers.</li>
-    </ul>
-
-    <h3>Toyota</h3>
-    <ul>
-        <li><strong>Connectivity:</strong> Uses AS2 for EDI, VANs only for Tier 1 suppliers.</li>
-        <li><strong>EDI Sent by Toyota:</strong> 830 (Forecast), 850 (PO), 862 (Daily Shipping Schedule), 856 (ASN), 810 (Invoice), 997 (FA).</li>
-        <li><strong>EDI Expected from Suppliers:</strong> 856 (ASN with detailed packing info), 810 (Invoice), 997 (FA).</li>
-        <li><strong>Just-In-Time (JIT) Model:</strong> Toyota **relies heavily on 830 & 862 transactions** for precise production schedules.</li>
-        <li><strong>ASN Validation:</strong> Packaging, serial numbers, and **dock codes** must be included in the ASN.</li>
-        <li><strong>Labeling Requirements:</strong> Must follow **Toyota Odette/AIAG standards** for barcode labeling.</li>
-    </ul>
-
-    <h3>Honda</h3>
-    <ul>
-        <li><strong>Connectivity:</strong> AS2 required; VAN only allowed for older suppliers.</li>
-        <li><strong>EDI Sent by Honda:</strong> 830 (Forecast), 850 (PO), 862 (Shipping Instructions), 856 (ASN), 810 (Invoice), 997 (FA).</li>
-        <li><strong>EDI Expected from Suppliers:</strong> 856 (ASN must match invoice exactly), 810 (Invoice), 997 (FA).</li>
-        <li><strong>ASN Compliance:</strong> Honda has **zero-tolerance for ASN errors.** Mismatches with invoices = **auto rejection.**</li>
-        <li><strong>Labeling & Barcode Standards:</strong> Honda requires **Honda-approved label formats** with serialized barcodes.</li>
-    </ul>
-
-    <h3>Stellantis (Chrysler, Dodge, Jeep, RAM, Fiat)</h3>
-    <ul>
-        <li><strong>Connectivity:</strong> Uses IBM Sterling for AS2 connections; VAN support available.</li>
-        <li><strong>EDI Sent by Stellantis:</strong> 830 (Forecast), 850 (PO), 862 (Shipping Schedule), 856 (ASN), 810 (Invoice), 997 (FA).</li>
-        <li><strong>EDI Expected from Suppliers:</strong> 856 (ASN – time-sensitive validation), 810 (Invoice), 997 (FA).</li>
-        <li><strong>ASN Timing:</strong> ASNs must be **transmitted within minutes of shipment pickup.** Delays = **chargebacks.**</li>
-        <li><strong>Labeling Requirements:</strong> Stellantis follows **AIAG labeling standards with Stellantis-specific barcode rules.**</li>
-    </ul>
-
-    <h3>Volkswagen</h3>
-    <ul>
-        <li><strong>Connectivity:</strong> Requires **OFTP2** for European suppliers; AS2 for North American suppliers.</li>
-        <li><strong>EDI Sent by Volkswagen:</strong> 830 (Forecast), 850 (PO), 862 (Shipping Instructions), 856 (ASN), 810 (Invoice), 997 (FA).</li>
-        <li><strong>EDI Expected from Suppliers:</strong> 856 (ASN must match invoice), 810 (Invoice), 997 (FA).</li>
-        <li><strong>ASN Accuracy:</strong> Volkswagen **rejects late or incorrect ASNs automatically.**</li>
-        <li><strong>Labeling Standards:</strong> **Volkswagen uses VDA labeling standards** for European facilities.</li>
-    </ul>
-</section>
-
-
-        <!-- Contact -->
-        <section id="contact" class="content-section">
-            <h2>Get Expert Help with Automotive EDI</h2>
-            <p>Need help with EDI compliance, troubleshooting errors, or VAN connectivity? Contact us today.</p>
-            <a href="mailto:contactus@edi4dummies.com" class="cta-button">Contact Us</a>
+            <div class="info-card">
+                <h2>Why Choose EDI4Dummies?</h2>
+                <p>We provide **comprehensive, easy-to-understand** EDI guides tailored for the automotive industry.</p>
+                <ul>
+                    <li>📊 **Step-by-step tutorials**</li>
+                    <li>🛠️ **OEM-specific EDI requirements**</li>
+                    <li>🌎 **Industry-best practices**</li>
+                </ul>
+            </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 EDI4Dummies. All rights reserved.</p>
+        <p>&copy; 2025 EDI4Dummies. A product of <a href="https://gntsecurity.com" target="_blank">GNT Security (GNTS)</a>. All rights reserved.</p>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
     <script src="assets/js/main.js"></script>
 </body>
 </html>

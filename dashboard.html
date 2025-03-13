@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="EDI Dashboard">
+    <title>EDI4Dummies - Dashboard</title>
+    <link rel="stylesheet" href="assets/css/global.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="public/images/logo/logo.png" alt="EDI4Dummies Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="oem-ford.html">Ford EDI</a></li>
+                <li><a href="oem-gm.html">GM EDI</a></li>
+                <li><a href="oem-toyota.html">Toyota EDI</a></li>
+                <li id="logoutNav"><a href="#" id="logout">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="ediParser" class="content-section">
+            <h2>EDI Parser</h2>
+            <input type="file" id="ediFile" accept=".edi" />
+            <textarea id="ediInput" placeholder="Paste your EDI data here..."></textarea>
+            <button id="parseEDI">Parse EDI</button>
+            <div id="ediOutput"></div>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
