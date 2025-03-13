@@ -1,58 +1,58 @@
-const supabase = supabase.createClient(
-    "https://hgwkiavwpalxlbgzcifk.supabase.co",
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imhnd2tpYXZ3cGFseGxiZ3pjaWZrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDE4Njg1NzgsImV4cCI6MjA1NzQ0NDU3OH0.n2mSxtgGP-5Esk3hS7tllVDfAv8iFIWWC4KMxg64FVc"
-);
-
 document.addEventListener("DOMContentLoaded", function () {
+    // Initialize Supabase (FIXED: Now declared before usage)
+    const supabase = window.supabase.createClient(
+        "https://hgwkiavwpalxlbgzcifk.supabase.co",
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imhnd2tpYXZ3cGFseGxiZ3pjaWZrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDE4Njg1NzgsImV4cCI6MjA1NzQ0NDU3OH0.n2mSxtgGP-5Esk3hS7tllVDfAv8iFIWWC4KMxg64FVc"
+    );
+
     const loginBtn = document.getElementById("loginBtn");
     const signupBtn = document.getElementById("signupBtn");
 
-    // SIGNUP FUNCTION
+    // Show pop-up messages
+    function showPopup(message, success = true) {
+        alert(message); // Simple pop-up (Replace with a custom modal if needed)
+    }
+
+    // SIGNUP FUNCTION (FIXED)
     if (signupBtn) {
         signupBtn.addEventListener("click", async () => {
             const email = document.getElementById("signup-email").value.trim();
             const password = document.getElementById("signup-password").value.trim();
-            const authMessage = document.getElementById("authMessage");
 
             if (!email || !password) {
-                authMessage.textContent = "Email and password are required.";
-                authMessage.style.color = "red";
+                showPopup("Email and password are required.", false);
                 return;
             }
 
             let { error } = await supabase.auth.signUp({ email, password });
 
             if (error) {
-                authMessage.textContent = error.message;
-                authMessage.style.color = "red";
+                showPopup(error.message, false);
             } else {
-                authMessage.textContent = "Signup successful! Check your email.";
-                authMessage.style.color = "green";
+                showPopup("Signup successful! Check your email.", true);
                 setTimeout(() => { window.location.href = "login.html"; }, 2000);
             }
         });
     }
 
-    // LOGIN FUNCTION
+    // LOGIN FUNCTION (FIXED)
     if (loginBtn) {
         loginBtn.addEventListener("click", async () => {
             const email = document.getElementById("login-email").value.trim();
             const password = document.getElementById("login-password").value.trim();
-            const authMessage = document.getElementById("authMessage");
 
             if (!email || !password) {
-                authMessage.textContent = "Email and password are required.";
-                authMessage.style.color = "red";
+                showPopup("Email and password are required.", false);
                 return;
             }
 
             let { error } = await supabase.auth.signInWithPassword({ email, password });
 
             if (error) {
-                authMessage.textContent = error.message;
-                authMessage.style.color = "red";
+                showPopup(error.message, false);
             } else {
-                window.location.href = "dashboard.html";
+                showPopup("Login successful! Redirecting to Dashboard...", true);
+                setTimeout(() => { window.location.href = "dashboard.html"; }, 2000);
             }
         });
     }
